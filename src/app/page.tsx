@@ -1,155 +1,149 @@
-import { ArrowUpRight, Briefcase, ClipboardCheck, Factory, Hammer, Phone, Ruler, ShieldCheck, Truck } from "lucide-react";
+import { ArrowUpRight, ArrowRight, ShieldCheck, Factory, HardHat, Hammer, MapPin, Truck, ChevronRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { materials } from "@/lib/site-content";
+import { capabilities, serviceDetails } from "@/lib/site-content";
+import { getProjects } from "@/lib/portfolio-store";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const allProjects = await getProjects();
+  const featuredProjects = allProjects.filter((p) => p.featured).slice(0, 3);
+
   return (
     <>
       <SiteHeader />
       <main>
         <section className="hero">
           <div className="hero-inner">
-            <span className="eyebrow">Steel construction and site delivery</span>
-            <h1>Steel work for warehouses, factories, and site extensions.</h1>
+            <span className="eyebrow">Alb-Build Solutions</span>
+            <h1>Forging the Future in Steel Construction.</h1>
             <p>
-              Measurements, workshop fabrication, mounting, roofing, panels, and finishing handled by one practical team.
+              Engineered to last. Built to impress. From massive industrial warehouses to complex site extensions, we turn bold plans into solid reality.
             </p>
             <div className="hero-actions">
-              <a className="button" href="/portfolio">Portfolio <ArrowUpRight size={18} /></a>
-              <a className="button secondary light" href="/contact"><Phone size={18} /> Contact</a>
+              <a className="button" href="/portfolio">
+                View Our Work <ArrowUpRight size={18} />
+              </a>
+              <a className="button secondary light" href="/contact">
+                Start a Project <ChevronRight size={18} />
+              </a>
             </div>
+          </div>
+        </section>
+
+        <section className="proof animate-rise stagger-2">
+          <div>
+            <strong>12+</strong>
+            <span>Years of Excellence</span>
+          </div>
+          <div>
+            <strong>80+</strong>
+            <span>Major Projects Delivered</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>In-house Fabrication</span>
+          </div>
+          <div>
+            <strong>1</strong>
+            <span>Unified Expert Team</span>
           </div>
         </section>
 
         <section className="section compact-section">
           <div className="info-grid">
-            <article>
-              <span className="eyebrow">What we build</span>
-              <h2>Industrial steel, prepared for real site conditions.</h2>
+            <article className="animate-rise stagger-1">
+              <span className="eyebrow">Our Speciality</span>
+              <h2>Industrial steel engineered for extreme conditions.</h2>
+              <p className="muted" style={{ marginTop: "16px" }}>
+                We don't just build structures; we craft industrial ecosystems that withstand the test of time, operations, and weather.
+              </p>
             </article>
-            <article>
-              <h3>Typical work</h3>
+            <article className="animate-rise stagger-2">
+              <h3>Core Strengths</h3>
               <ul className="plain-list">
-                <li>Warehouses and production halls</li>
-                <li>Canopies, platforms, stairs, railings</li>
-                <li>Roof and facade panel installation</li>
-                <li>Steel repairs and building extensions</li>
+                {Object.keys(serviceDetails).slice(0, 4).map((title) => (
+                  <li key={title} style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                    <ArrowRight size={14} className="muted" /> {title}
+                  </li>
+                ))}
               </ul>
             </article>
-            <article>
-              <h3>Materials</h3>
+            <article className="animate-rise stagger-3">
+              <h3>Our Capabilities</h3>
               <ul className="plain-list">
-                {materials.slice(0, 5).map((item) => <li key={item}>{item}</li>)}
+                {capabilities.slice(0, 4).map((cap) => (
+                  <li key={cap} style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                    <ShieldCheck size={14} className="muted" /> {cap}
+                  </li>
+                ))}
               </ul>
             </article>
           </div>
         </section>
 
-        <section className="proof">
-          <div><strong>12+</strong><span>Years on industrial sites</span></div>
-          <div><strong>80+</strong><span>Steel and metalwork projects</span></div>
-          <div><strong>3</strong><span>Design, fabrication, mounting</span></div>
-          <div><strong>1</strong><span>Team from workshop to handover</span></div>
-        </section>
-
-        <section className="section compact-section">
-          <div className="home-detail">
-            <article>
-              <Ruler size={18} />
-              <h3>Measured before pricing</h3>
-              <p className="muted">Site access, dimensions, roof lines, anchor points, and existing structure are checked before scope is fixed.</p>
-            </article>
-            <article>
-              <Factory size={18} />
-              <h3>Fabricated in sequence</h3>
-              <p className="muted">Steel elements are cut, welded, drilled, treated, and marked so the site team can mount without confusion.</p>
-            </article>
-            <article>
-              <Truck size={18} />
-              <h3>Installed with site control</h3>
-              <p className="muted">Bolts, plates, panels, flashings, gutters, and corrections are coordinated through final handover.</p>
-            </article>
-          </div>
-        </section>
-
-        <section className="section white compact-section">
-          <div className="section-head">
-            <h2>Built for practical industrial use</h2>
-            <p>Most clients need a direct answer: what can be built, how it is prepared, and what stays under control on site.</p>
-          </div>
-          <div className="home-scope">
-            <article>
-              <Hammer size={18} />
-              <strong>New steel structures</strong>
-              <span>Warehouse frames, production halls, roof structures, loading canopies, and industrial extensions.</span>
-            </article>
-            <article>
-              <Factory size={18} />
-              <strong>Panels and envelope</strong>
-              <span>Sandwich panels, facade panels, gutters, flashing, drainage details, and roof finishing work.</span>
-            </article>
-            <article>
-              <ShieldCheck size={18} />
-              <strong>Repairs and reinforcement</strong>
-              <span>Added beams, stronger columns, roof support, platforms, railings, and safe interventions in existing buildings.</span>
-            </article>
-            <article>
-              <Truck size={18} />
-              <strong>Workshop to site</strong>
-              <span>Fabrication, marking, loading, transport coordination, mounting sequence, and final site correction.</span>
-            </article>
-          </div>
-        </section>
-
-        <section className="section compact-section">
-          <div className="handover-grid">
-            <div>
-              <span className="eyebrow">Handover discipline</span>
-              <h2>Clear scope before work, fewer surprises during mounting.</h2>
-              <p className="muted">The team checks access, dimensions, connection points, roof drainage, and finishing requirements before production starts.</p>
+        {featuredProjects.length > 0 && (
+          <section className="section white compact-section">
+            <div className="section-head animate-rise stagger-1">
+              <h2>Featured Projects</h2>
+              <p>Discover how we've transformed industrial visions into monumental steel realities across the region.</p>
             </div>
-            <ul className="plain-list handover-list">
-              <li>Measured dimensions and access notes</li>
-              <li>Material and finish agreement</li>
-              <li>Fabrication and mounting sequence</li>
-              <li>Panel, gutter, flashing, and bolt checks</li>
-              <li>Final corrections before client handover</li>
-            </ul>
-          </div>
-        </section>
+            <div className="project-grid">
+              {featuredProjects.map((project, i) => (
+                <a href="/portfolio" key={project.id} className={`project animate-rise stagger-${i + 1}`}>
+                  <img src={project.coverImage} alt={project.title} style={{ aspectRatio: "16 / 9" }} />
+                  <div className="project-body">
+                    <div className="meta">
+                      <span>{project.category}</span>
+                      <span>{project.year}</span>
+                    </div>
+                    <h3>{project.title}</h3>
+                    <p className="muted">{project.summary}</p>
+                    <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "12px", fontSize: "12px", color: "var(--muted)", fontWeight: "bold", textTransform: "uppercase" }}>
+                      <MapPin size={14} /> {project.location}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <div className="section-action" style={{ textAlign: "center", marginTop: "36px" }}>
+              <a className="button" href="/portfolio">See All Projects</a>
+            </div>
+          </section>
+        )}
 
-        <section className="section white compact-section">
+        <section className="section compact-section">
           <div className="section-head">
-            <h2>Next step</h2>
-            <p>Open the page that matches what the client needs: built work, service scope, or a direct quote request.</p>
+            <h2>The Construction Lifecycle</h2>
+            <p>A flawless project demands precision at every stage. Here is how we ensure zero surprises on site.</p>
           </div>
-          <div className="route-grid">
-            <a href="/portfolio">
-              <Briefcase size={18} />
-              <strong>Portfolio</strong>
-              <span>Project listings, status, location, area, and client type.</span>
-            </a>
-            <a href="/services">
-              <Factory size={18} />
-              <strong>Services</strong>
-              <span>Steel design, fabrication, mounting, panels, and repairs.</span>
-            </a>
-            <a href="/contact">
-              <Phone size={18} />
-              <strong>Contact</strong>
-              <span>Phone, email, location, hours, and quote checklist.</span>
-            </a>
+          <div className="home-detail">
+            <article className="animate-rise stagger-1">
+              <HardHat size={28} color="var(--accent)" />
+              <h3 style={{ marginTop: "12px" }}>Precision Engineering</h3>
+              <p className="muted">Laser-accurate site measurements and deep structural assessments ensure the design matches the physical reality perfectly.</p>
+            </article>
+            <article className="animate-rise stagger-2">
+              <Factory size={28} color="var(--accent)" />
+              <h3 style={{ marginTop: "12px" }}>Advanced Fabrication</h3>
+              <p className="muted">In our high-tech workshop, every beam is precision-cut, welded, and pre-treated for maximum durability and perfect alignment.</p>
+            </article>
+            <article className="animate-rise stagger-3">
+              <Truck size={28} color="var(--accent)" />
+              <h3 style={{ marginTop: "12px" }}>Rapid Erection</h3>
+              <p className="muted">Our specialized crews handle transport, sequencing, and erection on-site, delivering lightning-fast assembly with uncompromised safety.</p>
+            </article>
           </div>
         </section>
 
         <section className="section home-band">
           <div>
-            <ShieldCheck size={20} />
-            <strong>Serious steel work starts with clear scope.</strong>
+            <Hammer size={24} />
+            <strong>Ready to elevate your next industrial project?</strong>
           </div>
-          <p>Send drawings, photos, or the site address and the team can confirm what needs to be measured before quoting.</p>
-          <a className="button" href="/contact">Request quote</a>
+          <p>Bring us your blueprints, sketches, or ideas. We'll handle the heavy lifting, from initial quote to final bolt.</p>
+          <a className="button" href="/contact">Request a Quote</a>
         </section>
       </main>
       <SiteFooter />
