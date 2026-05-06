@@ -131,8 +131,8 @@ export default async function Home() {
             </article>
             <article className="animate-rise stagger-3">
               <Truck size={28} color="var(--accent)" />
-              <h3 style={{ marginTop: "12px" }}>Rapid Erection</h3>
-              <p className="muted">Our specialized crews handle transport, sequencing, and erection on-site, delivering lightning-fast assembly with uncompromised safety.</p>
+              <h3 style={{ marginTop: "12px" }}>Precision On-Site Assembly</h3>
+              <p className="muted">Our specialized crews handle transport, sequencing, and structural mounting on-site, delivering efficient assembly with uncompromised safety.</p>
             </article>
           </div>
         </section>

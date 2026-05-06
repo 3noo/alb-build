@@ -1,12 +1,12 @@
 :root {
-  --ink: #181818;
-  --muted: #62625f;
-  --line: #d9d6cf;
-  --paper: #f3f0e9;
+  --ink: #111111;
+  --muted: #666666;
+  --line: #e5e5e5;
+  --paper: #f9f9f9;
   --white: #ffffff;
-  --accent: #a53a24;
-  --steel: #30363a;
-  --steel-dark: #22272a;
+  --accent: #222222;
+  --steel: #333333;
+  --steel-dark: #1a1a1a;
 }
 
 * {
@@ -117,8 +117,8 @@ select {
 }
 
 .button:hover {
-  background: #822d1c;
-  border-color: #822d1c;
+  background: #000000;
+  border-color: #000000;
   transform: translateY(-1px);
 }
 
