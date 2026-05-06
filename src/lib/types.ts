@@ -1,19 +1,12 @@
-export type ProjectStatus = "completed" | "in-progress";
-
 export type PortfolioProject = {
   id: string;
   title: string;
+  city: string;
   category: string;
-  location: string;
   year: string;
-  client: string;
-  area: string;
-  status: ProjectStatus;
-  coverImage: string;
-  summary: string;
-  scope: string[];
+  cover_image: string;
   featured: boolean;
-  createdAt: string;
+  created_at: string;
 };
 
-export type ProjectInput = Omit<PortfolioProject, "id" | "createdAt">;
+export type ProjectInput = Omit<PortfolioProject, "id" | "created_at">;

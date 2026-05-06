@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronDown, ChevronRight, Factory, HardHat, Hammer, MapPin, ShieldCheck, Star, TrendingUp, Truck, Wallet } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ChevronRight, Factory, HardHat, Hammer, ShieldCheck, Star, TrendingUp, Truck, Wallet } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { capabilities, serviceDetails } from "@/lib/site-content";
@@ -104,15 +104,15 @@ export default async function Home() {
               <p>Zbuloni si i kemi kthyer vizionet industriale në realitete monumentale çeliku në të gjithë rajonin.</p>
             </div>
             <div className="project-grid">
-              {featuredProjects.map((project, i) => (
+              {featuredProjects.map((project) => (
                 <a
                   href="/portfolio"
                   key={project.id}
-                  className={`project animate-rise stagger-${i + 1}`}
+                  className="project animate-rise stagger-1"
                   style={{ borderRadius: "8px", overflow: "hidden" }}
                 >
                   <div className="project-overlay">
-                    <img src={project.coverImage} alt={project.title} />
+                    <img src={project.cover_image} alt={project.title} />
                     <div className="project-overlay-label">Shiko →</div>
                   </div>
                   <div className="project-body">
@@ -121,10 +121,7 @@ export default async function Home() {
                       <span>{project.year}</span>
                     </div>
                     <h3>{project.title}</h3>
-                    <p className="muted">{project.summary}</p>
-                    <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "12px", fontSize: "12px", color: "var(--muted)", fontWeight: "bold", textTransform: "uppercase" }}>
-                      <MapPin size={14} /> {project.location}
-                    </div>
+                    <p className="muted">{project.city}</p>
                   </div>
                 </a>
               ))}

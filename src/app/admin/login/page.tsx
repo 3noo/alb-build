@@ -9,22 +9,21 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
       <section className="admin-login-panel">
         <div>
           <a href="/" className="admin-logo">Alb Build</a>
-          <span className="admin-kicker"><ShieldCheck size={15} /> Protected dashboard</span>
-          <h1>Portfolio admin</h1>
+          <span className="admin-kicker"><ShieldCheck size={15} /> Panel i mbrojtur</span>
+          <h1>Hyr në panel</h1>
           <p>
-            Sign in to add steel construction projects, update listing details, and review what appears on the public
-            portfolio page.
+            Hyr për të shtuar projekte çeliku, për të përditësuar listimet dhe për të parë çfarë shfaqet në portofolin publik.
           </p>
         </div>
 
         <form action={loginAction} className="admin-login-form">
           <div className="field full">
-            <label htmlFor="password">Password</label>
-            <input id="password" name="password" type="password" required placeholder="Enter admin password" />
+            <label htmlFor="password">Fjalëkalimi</label>
+            <input id="password" name="password" type="password" required placeholder="Shkruaj fjalëkalimin" />
           </div>
-          {params.error ? <p className="form-error">Password is not correct.</p> : null}
+          {params.error ? <p className="form-error">Fjalëkalimi është i gabuar.</p> : null}
           <button className="button" type="submit">
-            <Lock size={17} /> Enter admin
+            <Lock size={17} /> Hyr
           </button>
           <p className="admin-hint">Local dev password: <strong>admin123</strong>. Use `ADMIN_PASSWORD` for deployment.</p>
         </form>
