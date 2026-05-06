@@ -14,10 +14,10 @@ export function SiteHeader() {
       <nav className="nav">
         <Link href="/" className="brand">Alb Build</Link>
         <div className="nav-links">
-          <Link href="/">Home</Link>
-          <Link href="/portfolio">Portfolio</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/">Kreu</Link>
+          <Link href="/portfolio">Portofoli</Link>
+          <Link href="/services">Shërbimet</Link>
+          <Link href="/contact">Kontakt</Link>
           <Link href="/admin">Admin</Link>
         </div>
       </nav>

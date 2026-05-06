@@ -953,6 +953,125 @@ h2 {
   }
 }
 
+/* Scroll-triggered animation base state */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate][data-delay="100"] { transition-delay: 100ms; }
+[data-animate][data-delay="200"] { transition-delay: 200ms; }
+[data-animate][data-delay="300"] { transition-delay: 300ms; }
+[data-animate][data-delay="400"] { transition-delay: 400ms; }
+[data-animate][data-delay="500"] { transition-delay: 500ms; }
+
+/* Word-by-word hero headline */
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: word-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes word-rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll indicator bounce */
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  animation: bounce 2s ease-in-out infinite;
+  cursor: default;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* Richer card hover — left border accent */
+.card-hover {
+  border-left: 3px solid transparent;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.card-hover:hover {
+  border-left-color: var(--ink);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Value pillars 2x2 grid */
+.value-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.value-grid article {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 28px;
+}
+
+.value-grid h3 {
+  font-size: 18px;
+  margin: 12px 0 8px;
+}
+
+/* Project card image overlay */
+.project-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-overlay img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.project-overlay:hover img {
+  transform: scale(1.04);
+}
+
+.project-overlay-label {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.project-overlay:hover .project-overlay-label {
+  opacity: 1;
+}
+
+/* Proof bar counter — larger numbers */
+.proof strong {
+  font-size: clamp(28px, 3.5vw, 48px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1005,7 +1124,8 @@ h2 {
   .handover-list,
   .project-grid,
   .proof,
-  .form-grid {
+  .form-grid,
+  .value-grid {
     grid-template-columns: 1fr;
   }
 

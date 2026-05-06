@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ScrollAnimations } from "@/components/scroll-animations";
 
 export const metadata: Metadata = {
   title: "Alb Build Steel Construction",
@@ -9,7 +10,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ScrollAnimations />
+        {children}
+      </body>
     </html>
   );
 }
