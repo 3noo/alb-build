@@ -1,0 +1,47 @@
+[
+  {
+    "id": "industrial-warehouse-fier",
+    "title": "Industrial Warehouse Frame",
+    "category": "Steel Structure",
+    "location": "Fier, Albania",
+    "year": "2025",
+    "client": "Private logistics operator",
+    "area": "3,800 m2",
+    "status": "completed",
+    "coverImage": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
+    "summary": "Design, fabrication, and installation of a clear-span warehouse with insulated roof and wall panels.",
+    "scope": ["Structural design", "Steel fabrication", "Site assembly", "Sandwich panel cladding"],
+    "featured": true,
+    "createdAt": "2026-01-08T09:00:00.000Z"
+  },
+  {
+    "id": "factory-extension-tirana",
+    "title": "Factory Extension",
+    "category": "Production Facility",
+    "location": "Tirana, Albania",
+    "year": "2024",
+    "client": "Manufacturing company",
+    "area": "1,950 m2",
+    "status": "completed",
+    "coverImage": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=80",
+    "summary": "Extension of an active production site while keeping daily operations protected and accessible.",
+    "scope": ["Site survey", "Reinforcement details", "Steel erection", "Roofing and drainage"],
+    "featured": true,
+    "createdAt": "2025-11-18T09:00:00.000Z"
+  },
+  {
+    "id": "logistics-canopy-durres",
+    "title": "Logistics Loading Canopy",
+    "category": "Metal Canopy",
+    "location": "Durres, Albania",
+    "year": "2024",
+    "client": "Distribution center",
+    "area": "620 m2",
+    "status": "completed",
+    "coverImage": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80",
+    "summary": "Weather-protected loading zone with durable steel columns, roof beams, and perimeter lighting support.",
+    "scope": ["Workshop drawings", "Steel treatment", "Fast installation", "Final inspection"],
+    "featured": false,
+    "createdAt": "2025-07-12T09:00:00.000Z"
+  }
+]
